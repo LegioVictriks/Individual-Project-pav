@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import TaskDetails from './TaskObj/TaskDetails';
+// import TaskDetails from './TaskObj/TaskDetails';
 import Calenadr from '../Calendar';
+import '../Css/Home.css'
 
-const NewComponent = () => {
+const Homepage = () => {
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [latestTask, setLatestTask] = useState(null);
 
     useEffect(() => {
-        // Здесь можно выполнить запрос к API или получить данные из localStorage
-        // Заглушка для демонстрации
+
         const storedTasks = localStorage.getItem('tasks');
         if (storedTasks) {
             setTasks(JSON.parse(storedTasks));
@@ -20,9 +20,9 @@ const NewComponent = () => {
 
     useEffect(() => {
         if (!loading && tasks.length > 0) {
-            // Сортировка задач по дате последнего обновления
+            // sort last
             const tasksSortedByLastUpdated = tasks.slice().sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
-            // Если нет обновлений, сортируем по дате создания
+            // sort create
             if (tasksSortedByLastUpdated[0].lastUpdated === tasksSortedByLastUpdated[tasksSortedByLastUpdated.length - 1].lastUpdated) {
                 const tasksSortedByCreationDate = tasks.slice().sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate));
                 setLatestTask(tasksSortedByCreationDate[0]);
@@ -33,24 +33,25 @@ const NewComponent = () => {
     }, [tasks, loading]);
 
     return (
-        <div>
+        <div className='home-cont'>
             <Calenadr/>
         <div>
-            <h1>Task Display</h1>
+            <h1>Last Update</h1>
+            <p>page for new or update projects</p>
             {loading ? (
                 <p>Loading...</p>
             ) : latestTask ? (
-                <div>
+                <div className='displa-f'>
                     <h2>{latestTask.name}</h2>
                     <p>Status: {latestTask.status}</p>
                     <NavLink to={`/projects/${latestTask.id}`}>More Details</NavLink>
                 </div>
             ) : (
-                <p>No tasks found!</p>
+                <p>Today nothing;)</p>
             )}
         </div>
         </div>
     );
 };
 
-export default NewComponent;
+export default Homepage;
