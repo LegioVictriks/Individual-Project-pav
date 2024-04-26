@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React,{ useState } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import Taskss from './Headers/Tasks.jsx';
+import TaskApp from './Headers/Projects.jsx';
 import Calenadr from './Calendar';
 import './Css/Headers.css'
+import NewComponent from './Headers/Home.jsx';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EmailShortener = ({ email }) => {
@@ -33,8 +36,7 @@ const Headers = () => {
         <img src="/assets/icon.png" alt="Icon_png" />
         <NavLink to="/home" activeClassName="active">Home</NavLink>
         <NavLink to="/projects" activeClassName="active">Projects</NavLink>
-        <NavLink to="/tasks" activeClassName="active">Tasks</NavLink>
-        <NavLink to="/calendar" activeClassName="active">Calendar</NavLink>
+        <NavLink to="/tasks" activeClassName="active">Progress</NavLink>
          </div>
       <div className='flexdiv'>
       <div className='emailcss'> <EmailShortener email="exampler@mail.com" /></div> 
@@ -44,24 +46,21 @@ const Headers = () => {
       <Route path="/home" component={home} />
       <Route path="/projects" component={Projects} />
       <Route path="/tasks" component={Tasks} />
-      <Route path="/calendar" component={Calendar} />
+
     </Router>
   );
 };
 
 const home = () => {
-  return <div>Home</div> ;
+  return <NewComponent/> ;
 };
 const Projects = () => {
-  return <div>projects</div> ;
+  return <TaskApp/> ;
 };
 
 const Tasks = () => {
-  return <div>task</div>;
+  return <Taskss/>;
 };
 
-const Calendar = () => {
-  return <Calenadr/>;
-};
 
 export default Headers;

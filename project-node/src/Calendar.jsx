@@ -5,7 +5,9 @@ const Calenadr = () => {
     const currentDate = new Date();
     const dates = Array.from({ length: 31 }, (_, index) => index + 1);
     const formattedDate = currentDate.toLocaleDateString();
-    const formattedTime = currentDate.toLocaleTimeString();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const formattedTime = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
   
     const today = currentDate.getDate();
   
@@ -28,4 +30,4 @@ const Calenadr = () => {
     );
   };
   
-  export default Calenadr;
+export default Calenadr;
