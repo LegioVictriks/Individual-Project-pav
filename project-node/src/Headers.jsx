@@ -35,7 +35,7 @@ const Headers = () => {
         <img src="/assets/icon.png" alt="Icon_png" />
         <NavLink to="/home" activeClassName="active">Home</NavLink>
         <NavLink to="/projects" activeClassName="active">Projects</NavLink>
-        <NavLink to="/tasks" activeClassName="active">Progress</NavLink>
+        <NavLink to="/progress" activeClassName="active">Progress</NavLink>
          </div>
       <div className='flexdiv'>
       <div className='emailcss'> <EmailShortener email="exampler@mail.com" /></div> 
@@ -44,7 +44,7 @@ const Headers = () => {
       </div> 
       <Route path="/home" component={home} />
       <Route path="/projects" component={Projects} />
-      <Route path="/tasks" component={Tasks} />
+      <Route path="/progress" component={Tasks} />
 
     </Router>
   );

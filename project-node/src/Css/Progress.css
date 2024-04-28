@@ -1,0 +1,76 @@
+.task-app {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 250px; 
+  }
+  
+  .view-buttons {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .view-buttons button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .view-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+  
+  .grid-item {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .grid-item p {
+    margin: 0;
+  }
+  
+  NavLink {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  NavLink:hover {
+    text-decoration: underline;
+  }
+  
+
+  .list-view .columns {
+    flex-direction: column;
+  }
+  
+  .list-view .column {
+    margin: 0;
+  }
+  
+  .list-view .grid-view {
+    display: block;
+  }

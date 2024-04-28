@@ -6,7 +6,7 @@ const formatDate = (dateString) => {
     return formattedDate;
 };
 
-const Task = ({ task }) => {
+const Task = ({ task, onDeleteTask, onEditTask }) => {
     const [showDetails, setShowDetails] = useState(false);
 
     const toggleDetails = () => {
@@ -24,8 +24,11 @@ const Task = ({ task }) => {
                 <div>
                     <p>Creation Date: {formatDate(task.creationDate)}</p>
                     <p>Last Updated: {formatDate(task.lastUpdated)}</p>
+                    <button onClick={() => onDeleteTask(task.id)}>Delete</button>
+                    <button onClick={() => onEditTask(task.id)}>Edit</button>
                 </div>
             )}
+           
         </div>
     );
 };
