@@ -23,7 +23,7 @@ const EmailShortener = ({ email }) => {
   };
 
   return (
-    <span onClick={toggleEmail}>{renderEmail()}</span>
+    <span className='emailcol' onClick={toggleEmail}>{renderEmail()}</span>
   );
 };
 

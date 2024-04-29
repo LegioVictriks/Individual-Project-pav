@@ -45,6 +45,12 @@
     display: flex;
     align-items: center;
 }
-.loginc{
-   
+.emailcol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #851dcf;
+
 }
