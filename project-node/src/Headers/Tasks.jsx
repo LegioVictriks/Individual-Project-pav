@@ -31,7 +31,7 @@ const Taskss = () => {
                   task.status === 'To do' && (
                     <div className='obj-change' key={index}>
                       <p>{task.name}</p>
-                      <NavLink to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
@@ -42,7 +42,7 @@ const Taskss = () => {
                   task.status === 'To do' && (
                     <div  key={index}>
                       <p>{task.name}</p>
-                      <NavLink to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
@@ -58,7 +58,7 @@ const Taskss = () => {
                   task.status === 'In Progress' && (
                     <div className='obj-change' key={index}>
                       <p>{task.name}</p>
-                      <NavLink to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink  className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
@@ -69,7 +69,7 @@ const Taskss = () => {
                   task.status === 'In Progress' && (
                     <div key={index}>
                       <p>{task.name}</p>
-                      <NavLink  to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
@@ -85,7 +85,7 @@ const Taskss = () => {
                   task.status === 'Done' && (
                     <div className='obj-change' key={index}>
                       <p>{task.name}</p>
-                      <NavLink to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
@@ -96,7 +96,7 @@ const Taskss = () => {
                   task.status === 'Done' && (
                     <div key={index}>
                       <p>{task.name}</p>
-                      <NavLink to={`/projects/${task.id}`}>More Details</NavLink>
+                      <NavLink className="details-link-nav" to={`/projects/${task.id}`}>More Details</NavLink>
                     </div>
                   )
                 ))}
